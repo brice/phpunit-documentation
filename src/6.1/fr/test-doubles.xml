@@ -36,10 +36,24 @@
   </blockquote>
 
   <para>
-    La méthode <literal>getMock($nomClasse)</literal> fournit par PHPUnit peut être
-    utilisée dans un test pour générer automatiquement un objet qui peut agir comme une
-    doublure de test pour une classe originelle indiquée. Cette doublure de test peut être
-    utilisée dans tous les contextes où la classe originelle est attendue.
+    Les méthodes <literal>getMock($nomClasse)</literal> et
+    <literal>getMockBuilder($type)</literal> fourni par PHPUnit peuvent être
+    utilisées dans un test pour générer automatiquement un objet qui peut agir comme une
+    doublure de test pour une classe originelle indiquée (interface ou non de classe).
+    Cette doublure de test peut être utilisée dans tous les contextes où la classe
+    originelle est attendue ou requise.
+  </para>
+
+  <para>
+
+    La méthode <literal>createMock($type)</literal> retourne immédiatement une doublure de
+    test pour le type spécifié (interface ou classe). La création de cette doublure est
+    effectuée en suivant par défaut les bonne pratiques (les méthodes <literal>__construct()
+    </literal> et <literal>__clone()</literal> de la classe originale ne sont pas executées
+    et les arguments passés à une méthode de la doublure de tests ne sont pas clonés. Si ce
+    comportement par défaut ne correspondent pas à ce don vous avez besoin vous pouvez
+    alors utiliser la méthode <literal>getMockBuilder($type)</literal> pour personnaliser la
+    génération de doublure de test en utilisant un chaînage de méthode (fluent interface).
   </para>
 
   <para>

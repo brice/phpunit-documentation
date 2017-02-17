@@ -3,7 +3,7 @@
   <title>Assertions</title>
 
   <para>
-    Cette annexe liste les différentes méthodes d'assertion disponible.
+    Cette annexe liste les différentes méthodes d'assertion disponibles.
   </para>
 
   <section id="appendixes.assertions.assertArrayHasKey">
