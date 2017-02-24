@@ -21,6 +21,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
  * Mettre à jour les fichiers existants
  * Partir à la chasse aux typos et aux fautes d'orthographes, de grammaire et de syntaxes
  * Détecter le franglais et les anglicismes
+ * Revue de pair sur les PR
 
 
 ## Plan
@@ -31,7 +32,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | assertions.xml                    | NOK       |                |
 | bibliography.xml                  | NOK       |                |
 | book.xml                          | NOK       |                |
-| code-coverage-analysis.xml        | NOK       |                |
+| code-coverage-analysis.xml        | En cours  | @brice         |
 | configuration.xml                 | NOK       |                |
 | copyright.xml                     | NOK       |                |
 | database.xml                      | NOK       |                |

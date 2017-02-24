@@ -145,6 +145,19 @@ class StubTest extends TestCase
 ?>]]></programlisting>
     </example>
 
+    <note>
+      <title>Limitation: Méthodes nommées "method"</title>
+
+      <para>
+        The example shown above only works when the original class does not
+        declare a method named "method".
+      </para>
+
+      <para>
+        If the original class does declare a method named "method" then <literal><![CDATA[$stub->expects($this->any())->method('doSomething')->willReturn('foo');]]></literal> has to be used.
+      </para>
+    </note>
+
     <para>
       "Derrière la scène", PHPUnit génère automatiquement une nouvelle classe qui
       implémente le comportement souhaité quand la méthode <literal>getMock()</literal>
