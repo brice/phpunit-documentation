@@ -14,13 +14,12 @@
       <indexterm><primary>Système à tester</primary></indexterm>
 
       Parfois il est parfaitement difficile de juste tester un système en cours de test
-      (SCT) parce qu'il dépend d'autres composants qui ne peuvent pas
-      être utilisés dans l'environnement de test. Ceci peut provenir du fait
-      qu'ils ne sont pas disponibles, qu'ils ne retournent pas les résultats
-      nécessaires pour les tests ou parce que les exécuter pourrait avoir
-      des effets de bord indésirables. Dans d'autres cas, notre stratégie de test
-      nécessite que nous ayons plus de contrôle ou de visibilité sur le comportement
-      interne du SCT.
+      (SCT) parce qu'il dépend d'autres composants qui ne peuvent pas être utilisés dans
+      l'environnement de test. Ceci peut provenir du fait qu'ils ne sont pas disponibles,
+      qu'ils ne retournent pas les résultats nécessaires pour les tests ou parce que les
+      exécuter pourrait avoir des effets de bord indésirables. Dans d'autres cas, notre
+      stratégie de test nécessite que nous ayons plus de contrôle ou de visibilité sur
+      le comportement interne du SCT.
     </para>
 
     <para>
@@ -149,20 +148,27 @@ class StubTest extends TestCase
       <title>Limitation: Méthodes nommées "method"</title>
 
       <para>
-        The example shown above only works when the original class does not
-        declare a method named "method".
+        L'exemple ci dessus ne fonctionne que quand la classe originale ne déclare
+        pas de méthode appelé "method".
       </para>
 
       <para>
-        If the original class does declare a method named "method" then <literal><![CDATA[$stub->expects($this->any())->method('doSomething')->willReturn('foo');]]></literal> has to be used.
+        Si la classe originalle décalre une methode appelée "methode" alors vous devez utiliser
+        <literal><![CDATA[$stub->expects($this->any())->method('doSomething')->willReturn('foo');]]></literal>.
       </para>
     </note>
 
     <para>
       "Derrière la scène", PHPUnit génère automatiquement une nouvelle classe qui
-      implémente le comportement souhaité quand la méthode <literal>getMock()</literal>
-      est utilisée. La classe doublure de test peut être configurée via des
-      paramètres optionnels de la méthode <literal>getMock()</literal>.
+      implémente le comportement souhaité quand la méthode <literal>createMock()</literal>
+      est utilisée.
+    </para>
+
+    <para>
+      <xref linkend="test-doubles.stubs.examples.StubTest2.php"/> shows an
+      example of how to use the Mock Builder's fluent interface to configure the
+      creation of the test double. The configuration of this test double uses
+      the same best practice defaults used by <literal>createMock()</literal>.
     </para>
 
     <itemizedlist>
