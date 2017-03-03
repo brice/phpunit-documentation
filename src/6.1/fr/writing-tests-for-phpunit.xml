@@ -4,7 +4,7 @@
   <title>Ecrire des tests pour PHPUnit</title>
 
   <para>
-    <indexterm><primary>PHPUnit_Framework_TestCase</primary></indexterm>
+    <indexterm><primary>PHPUnit\Framework\TestCase</primary></indexterm>
 
     <xref linkend="writing-tests-for-phpunit.examples.StackTest.php" /> montre
     comment nous pouvons écrire des tests en utilisant PHPUnit pour contrôler
@@ -13,28 +13,30 @@
   </para>
 
   <orderedlist>
-    <listitem><para>Les tests pour une classe <literal>Classe</literal> vont dans une classe <literal>ClasseTest</literal>.</para></listitem>
-    <listitem><para><literal>ClasseTest</literal> hérite (la plupart du temps) de <literal>PHPUnit_Framework_TestCase</literal>.</para></listitem>
-    <listitem><indexterm><primary>Annotation</primary></indexterm><indexterm><primary>@test</primary></indexterm><para>Les tests sont des méthodes publiques qui sont appelées <literal>test*</literal>.</para><para><indexterm><primary>Annotation</primary></indexterm>Alternativement, vous pouvez utiliser l'annotation <literal>@test</literal> dans le bloc de documentation d'une méthode pour la marquer comme étant une méthode de test.</para></listitem>
+    <listitem><para>Les tests pour une classe <literal>Class</literal> vont dans une classe <literal>ClassTest</literal>.</para></listitem>
+    <listitem><para><literal>ClassTest</literal> hérite (la plupart du temps) de <literal>PHPUnit\Framework\TestCase</literal>.</para></listitem>
+    <listitem><para>Les tests sont des méthodes publiques qui sont appelées <literal>test*</literal>.</para><para><indexterm><primary>Annotation</primary></indexterm>Alternativement, vous pouvez utiliser l'annotation <literal>@test</literal> dans le bloc de documentation d'une méthode pour la marquer comme étant une méthode de test.</para></listitem>
     <listitem><para>A l'intérieur des méthodes de test, des méthodes d'assertion telles que <literal>assertEquals()</literal> (voir <xref linkend="writing-tests-for-phpunit.assertions" />) sont utilisées pour affirmer qu'une valeur constatée correspond à une valeur attendue.</para></listitem>
   </orderedlist>
 
   <example id="writing-tests-for-phpunit.examples.StackTest.php">
     <title>Tester des opérations de tableau avec PHPUnit</title>
     <programlisting><![CDATA[<?php
-class PileTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class StackTest extends TestCase
 {
-    public function testerPushEtPop()
+    public function testPushAndPop()
     {
-        $pile = array();
-        $this->assertEquals(0, count($pile));
+        $stack = [];
+        $this->assertEquals(0, count($stack));
 
-        array_push($pile, 'foo');
-        $this->assertEquals('foo', $pile[count($pile)-1]);
-        $this->assertEquals(1, count($pile));
+        array_push($stack, 'foo');
+        $this->assertEquals('foo', $stack[count($stack)-1]);
+        $this->assertEquals(1, count($stack));
 
-        $this->assertEquals('foo', array_pop($pile));
-        $this->assertEquals(0, count($pile));
+        $this->assertEquals('foo', array_pop($stack));
+        $this->assertEquals(0, count($stack));
     }
 }
 ?>]]></programlisting>
