@@ -6,16 +6,24 @@
   <para>
     <indexterm><primary>Annotation</primary></indexterm>
 
-    Une annotation est une forme spéciale de méta donnée syntaxique qui peut
+    Une annotation est une forme spéciale de métadonnée syntaxique qui peut
     être ajoutée au code source de certains langages de programmation. Bien que
     PHP n'ait pas de fonctionnalité dédiée à l'annotation du code source, l'utilisation
-    d'étiquettes telles que <literal>@annotation paramètres</literal> dans les blocs de documentation 
+    d'étiquettes telles que <literal>@annotation arguments</literal> dans les blocs de documentation
     s'est établi dans la communauté PHP pour annoter le code source. En PHP, les blocs de
-    documentation sont réflexifs: ils peuvent être accédés via la méthode de l'API de réflexivité
+    documentation sont réflexifs : ils peuvent être accédés via la méthode de l'API de réflexivité
     <literal>getDocComment()</literal> au niveau des fonctions, classes, méthodes et attributs.
     Des applications telles que PHPUnit utilisent ces informations durant l'exécution pour
     adapter leur comportement.
   </para>
+
+  <note>
+    <para>
+        Un "doc comment" en PHP doit commencé par <literal>/**</literal> et se terminer avec
+        <literal>*/</literal>. Les annotations se trouvant des des commentaires d'un autre style
+        seront ignorées.
+    </para>
+  </note>
 
   <para>
     Cette annexe montre toutes les sortes d'annotations gérées par PHPUnit.

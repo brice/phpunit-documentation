@@ -13,8 +13,8 @@
   </para>
 
   <orderedlist>
-    <listitem><para>Les tests pour une classe <literal>Classe</literal> vont dans une classe <literal>ClasseTest</literal>.</para></listitem>
-    <listitem><para><literal>ClasseTest</literal> hérite (la plupart du temps) de <literal>PHPUnit\Framework\TestCase</literal>.</para></listitem>
+    <listitem><para>Les tests pour une classe <literal>Class</literal> vont dans une classe <literal>ClassTest</literal>.</para></listitem>
+    <listitem><para><literal>ClassTest</literal> hérite (la plupart du temps) de <literal>PHPUnit\Framework\TestCase</literal>.</para></listitem>
     <listitem><para>Les tests sont des méthodes publiques qui sont appelées <literal>test*</literal>.</para><para><indexterm><primary>Annotation</primary></indexterm><indexterm><primary>@test</primary></indexterm>Alternativement, vous pouvez utiliser l'annotation <literal>@test</literal> dans le bloc de documentation d'une méthode pour la marquer comme étant une méthode de test.</para></listitem>
     <listitem><para>A l'intérieur des méthodes de test, des méthodes d'assertion telles que <literal>assertEquals()</literal> (voir <xref linkend="appendixes.assertions" />) sont utilisées pour affirmer qu'une valeur constatée correspond à une valeur attendue.</para></listitem>
   </orderedlist>

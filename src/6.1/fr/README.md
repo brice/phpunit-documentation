@@ -26,29 +26,29 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 
 ## Plan
 
-| Fichier                           | Etat      | Contributeurs  |
-| --------------------------------- | :-------: | :------------: |
-| annotations.xml                   | En cours  | @brice         |
-| assertions.xml                    | NOK       |                |
-| bibliography.xml                  | NOK       |                |
-| book.xml                          | NOK       |                |
-| code-coverage-analysis.xml        | En cours  | @brice         |
-| configuration.xml                 | NOK       |                |
-| copyright.xml                     | NOK       |                |
-| database.xml                      | NOK       |                |
-| extending-phpunit.xml             | NOK       |                |
-| fixtures.xml                      | NOK       |                |
-| incomplete-and-skipped-tests.xml  | NOK       |                |
-| index.xml                         | NOK       |                |
-| installation.xml                  | En cours  | @brice         |
-| logging.xml                       | NOK       |                |
-| organizing-tests.xml              | NOK       |                |
-| other-uses-for-tests.xml          | NOK       |                |
-| risky-tests.xml                   | NOK       |                |
-| test-doubles.xml                  | En cours  | @brice         |
-| testing-practices.xml             | NOK       |                |
-| textui.xml                        | NOK       |                |
-| writing-tests-for-phpunit.xml     | NOK       |                |
+| Fichier                           | Etat      | Contributeurs  | Nb ligne revues/Total    |
+| --------------------------------- | :-------: | :------------: | :----------------------: |
+| annotations.xml                   | En cours  | @brice         | 30/511                   |
+| assertions.xml                    | NOK       |                |                          |
+| bibliography.xml                  | NOK       |                |                          |
+| book.xml                          | NOK       |                |                          |
+| code-coverage-analysis.xml        | En cours  | @brice         |                          |
+| configuration.xml                 | NOK       |                |                          |
+| copyright.xml                     | NOK       |                |                          |
+| database.xml                      | NOK       |                |                          |
+| extending-phpunit.xml             | NOK       |                |                          |
+| fixtures.xml                      | NOK       |                |                          |
+| incomplete-and-skipped-tests.xml  | NOK       |                |                          |
+| index.xml                         | NOK       |                |                          |
+| installation.xml                  | En cours  | @brice         |                          |
+| logging.xml                       | NOK       |                |                          |
+| organizing-tests.xml              | NOK       |                |                          |
+| other-uses-for-tests.xml          | NOK       |                |                          |
+| risky-tests.xml                   | NOK       |                |                          |
+| test-doubles.xml                  | En cours  | @brice         |                          |
+| testing-practices.xml             | NOK       |                |                          |
+| textui.xml                        | NOK       |                |                          |
+| writing-tests-for-phpunit.xml     | NOK       |                |                          |
 
 
 ## Guide de traduction
