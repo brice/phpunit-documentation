@@ -148,27 +148,27 @@ class StubTest extends TestCase
       <title>Limitation: Méthodes nommées "method"</title>
 
       <para>
-        L'exemple ci dessus ne fonctionne que quand la classe originale ne déclare
+        L'exemple ci dessus ne fonctionne que si la classe originale ne déclare
         pas de méthode appelé "method".
       </para>
 
       <para>
-        Si la classe originalle décalre une methode appelée "methode" alors vous devez utiliser
+        Si la classe originale déclare une methode appelée "methode" alors vous devez utiliser
         <literal><![CDATA[$stub->expects($this->any())->method('doSomething')->willReturn('foo');]]></literal>.
       </para>
     </note>
 
     <para>
-      "Derrière la scène", PHPUnit génère automatiquement une nouvelle classe qui
+      "Dans les coulisses", PHPUnit génère automatiquement une nouvelle classe qui
       implémente le comportement souhaité quand la méthode <literal>createMock()</literal>
       est utilisée.
     </para>
 
     <para>
-      <xref linkend="test-doubles.stubs.examples.StubTest2.php"/> shows an
-      example of how to use the Mock Builder's fluent interface to configure the
-      creation of the test double. The configuration of this test double uses
-      the same best practice defaults used by <literal>createMock()</literal>.
+      <xref linkend="test-doubles.stubs.examples.StubTest2.php"/> montre un exemple
+      de comment utiliser l'interface souple du créateur de mock pour configurer
+      la création d'une doublure de test. La configuration de cette doublure de test
+      utilise les même bonnes pratiques utilisées par défaut par <literal>createMock()</literal>.
     </para>
 
     <itemizedlist>

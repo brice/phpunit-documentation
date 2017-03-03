@@ -45,7 +45,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | organizing-tests.xml              | NOK       |                |                          |
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
-| test-doubles.xml                  | En cours  | @brice         |                          |
+| test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
 | testing-practices.xml             | NOK       |                |                          |
 | textui.xml                        | NOK       |                |                          |
 | writing-tests-for-phpunit.xml     | NOK       |                |                          |
@@ -69,9 +69,12 @@ requirements:	pré-requis
 extension:		extensions
 code coverage:	couverture de code
 appendix:       annexe
+fixture:        fixture (pas trouvé mieux en français)
 
 verbe ing: 	traduits par l'infinitif dans les titres: testing => tester
 
 ## Historique du projet de traduction
 
-14/02/2017 : Je relance le projet de traduction de la doc de PHPUnit afin de permettre à des francophones de mieux appréhender ce produit. La dernière version française complète est lié à la version 4.3 de phpunit. C'est cette version qui est dupliqué dans les répertoires 4.4 à 6.0. La traduction commence à la version 6.1 avec un travail en cours de récupération des fichiers manquants et mise à jour des fichiers existant.
+14/02/2017 : Je relance le projet de traduction de la doc de PHPUnit afin de permettre à des francophones de mieux appréhender ce produit. La dernière version française complète est lié à la version 4.3 de phpunit. C'est cette version qui est dupliquée dans les répertoires 4.4 à 6.0. La traduction commence à la version 6.1 avec un travail en cours de récupération des fichiers manquants et mise à jour des fichiers existant.
+
+03/03/2017 : J'ai ajouté un tableau d'avancement ppur mesurer le travail à fournir pour arriver au bout des traductions.
