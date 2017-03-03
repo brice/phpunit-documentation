@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <chapter id="writing-tests-for-phpunit">
-  <title>Ecrire des tests pour PHPUnit</title>
+  <title>Écrire des tests pour PHPUnit</title>
 
   <para>
-    <indexterm><primary>PHPUnit_Framework_TestCase</primary></indexterm>
+    <indexterm><primary>PHPUnit\Framework\TestCase</primary></indexterm>
 
     <xref linkend="writing-tests-for-phpunit.examples.StackTest.php" /> montre
     comment nous pouvons écrire des tests en utilisant PHPUnit pour contrôler
@@ -14,27 +14,29 @@
 
   <orderedlist>
     <listitem><para>Les tests pour une classe <literal>Classe</literal> vont dans une classe <literal>ClasseTest</literal>.</para></listitem>
-    <listitem><para><literal>ClasseTest</literal> hérite (la plupart du temps) de <literal>PHPUnit_Framework_TestCase</literal>.</para></listitem>
-    <listitem><indexterm><primary>Annotation</primary></indexterm><indexterm><primary>@test</primary></indexterm><para>Les tests sont des méthodes publiques qui sont appelées <literal>test*</literal>.</para><para><indexterm><primary>Annotation</primary></indexterm>Alternativement, vous pouvez utiliser l'annotation <literal>@test</literal> dans le bloc de documentation d'une méthode pour la marquer comme étant une méthode de test.</para></listitem>
-    <listitem><para>A l'intérieur des méthodes de test, des méthodes d'assertion telles que <literal>assertEquals()</literal> (voir <xref linkend="writing-tests-for-phpunit.assertions" />) sont utilisées pour affirmer qu'une valeur constatée correspond à une valeur attendue.</para></listitem>
+    <listitem><para><literal>ClasseTest</literal> hérite (la plupart du temps) de <literal>PHPUnit\Framework\TestCase</literal>.</para></listitem>
+    <listitem><para>Les tests sont des méthodes publiques qui sont appelées <literal>test*</literal>.</para><para><indexterm><primary>Annotation</primary></indexterm><indexterm><primary>@test</primary></indexterm>Alternativement, vous pouvez utiliser l'annotation <literal>@test</literal> dans le bloc de documentation d'une méthode pour la marquer comme étant une méthode de test.</para></listitem>
+    <listitem><para>A l'intérieur des méthodes de test, des méthodes d'assertion telles que <literal>assertEquals()</literal> (voir <xref linkend="appendixes.assertions" />) sont utilisées pour affirmer qu'une valeur constatée correspond à une valeur attendue.</para></listitem>
   </orderedlist>
 
   <example id="writing-tests-for-phpunit.examples.StackTest.php">
     <title>Tester des opérations de tableau avec PHPUnit</title>
     <programlisting><![CDATA[<?php
-class PileTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class StackTest extends TestCase
 {
-    public function testerPushEtPop()
+    public function testPushAndPop()
     {
-        $pile = array();
-        $this->assertEquals(0, count($pile));
+        $stack = [];
+        $this->assertEquals(0, count($stack));
 
-        array_push($pile, 'foo');
-        $this->assertEquals('foo', $pile[count($pile)-1]);
-        $this->assertEquals(1, count($pile));
+        array_push($stack, 'foo');
+        $this->assertEquals('foo', $stack[count($stack)-1]);
+        $this->assertEquals(1, count($stack));
 
-        $this->assertEquals('foo', array_pop($pile));
-        $this->assertEquals(0, count($pile));
+        $this->assertEquals('foo', array_pop($stack));
+        $this->assertEquals(0, count($stack));
     }
 }
 ?>]]></programlisting>
@@ -44,8 +46,8 @@ class PileTest extends PHPUnit_Framework_TestCase
     <attribution>Martin Fowler</attribution>
     <para>
       A chaque fois que vous avez la tentation de saisir quelque chose dans une
-      instruction <literal>print</literal> ou dans une expression de débogage, écrivez le
-      plutôt dans un test.
+      instruction <literal>print</literal> ou dans une expression de débogage,
+      écrivez le plutôt dans un test.
     </para>
   </blockquote>
 
@@ -55,29 +57,28 @@ class PileTest extends PHPUnit_Framework_TestCase
     <blockquote>
       <attribution>Adrian Kuhn et. al.</attribution>
       <para>
-        Les tests unitaires sont avant tout écrits comme étant une bonne pratique destinée
-        à aider les développeurs à identifier et corriger les bugs, à refactoriser le code et à
-        servir de documentation pour une unité du logiciel testé. Pour obtenir ces
-        avantages, les tests unitaires doivent idéalement couvrir tous les chemins possibles
-        du programme. Un test unitaire couvre usuellement un unique chemin particulier d'une
-        seule fonction ou méthode. Cependant, une méthode de test n'est pas obligatoirement
-        une entité encapsulée et indépendante. Souvent, il existe des dépendances implicites
-        entre les méthodes de test, cachées dans l'implémentation du scénario d'un test.
+        Les tests unitaires sont avant tout écrits comme étant une bonne pratique destinée à aider les développeurs
+        à identifier et corriger les bugs, à refactoriser le code et à servir de documentation
+        pour une unité du logiciel testé. Pour obtenir ces avantages, les tests unitaires
+        doivent idéalement couvrir tous les chemins possibles du programme. Un test unitaire
+        couvre usuellement un unique chemin particulier d'une seule fonction ou méthode. Cependant, une
+        méthode de test n'est pas obligatoirement une entité encapsulée et indépendante. Souvent,
+        il existe des dépendances implicites entre les méthodes de test, cachées
+        dans l'implémentation du scénario d'un test.
       </para>
     </blockquote>
 
     <para>
       <indexterm><primary>Dépendances des tests</primary></indexterm>
 
-      PHPUnit gère la déclaration de dépendances explicites entre les méthodes
-      de test. De telles dépendances ne définissent pas l'ordre dans lequel les
-      méthodes de test doivent être exécutées, mais elles permettent l'envoi d'une
-      instance d'un composant de test par un producteur à des consommateurs qui
-      en dépendent.
+      PHPUnit gère la déclaration de dépendances explicites entre les
+      méthodes de test. De telles dépendances ne définissent pas l'ordre dans lequel les méthodes de test
+      doivent être exécutées mais elles permettent de renvoyer une instance de
+      la fixture de test par un producteur à des consommateurs qui en dépendent.
     </para>
 
     <itemizedlist>
-      <listitem><para>Un producteur est une méthode de test qui cède ses éléments testées comme valeur de sortie.</para></listitem>
+      <listitem><para>Un producteur est une méthode de test qui produit ses éléments testées comme valeur de retour.</para></listitem>
       <listitem><para>Un consommateur est une méthode de test qui dépend d'un ou plusieurs producteurs et de leurs valeurs de retour.</para></listitem>
     </itemizedlist>
 
@@ -93,48 +94,63 @@ class PileTest extends PHPUnit_Framework_TestCase
     <example id="writing-tests-for-phpunit.examples.StackTest2.php">
       <title>Utiliser l'annotation <literal>@depends</literal> pour exprimer des dépendances</title>
       <programlisting><![CDATA[<?php
-class PileTest extends PHPUnit_Framework_TestCase
-{
-    public function testVide()
-    {
-        $pile = array();
-        $this->assertEmpty($pile);
+use PHPUnit\Framework\TestCase;
 
-        return $pile;
+class StackTest extends TestCase
+{
+    public function testEmpty()
+    {
+        $stack = [];
+        $this->assertEmpty($stack);
+
+        return $stack;
     }
 
     /**
-     * @depends testVide
+     * @depends testEmpty
      */
-    public function testPush(array $pile)
+    public function testPush(array $stack)
     {
-        array_push($pile, 'foo');
-        $this->assertEquals('foo', $pile[count($pile)-1]);
-        $this->assertNotEmpty($pile);
+        array_push($stack, 'foo');
+        $this->assertEquals('foo', $stack[count($stack)-1]);
+        $this->assertNotEmpty($stack);
 
-        return $pile;
+        return $stack;
     }
 
     /**
      * @depends testPush
      */
-    public function testPop(array $pile)
+    public function testPop(array $stack)
     {
-        $this->assertEquals('foo', array_pop($pile));
-        $this->assertEmpty($pile);
+        $this->assertEquals('foo', array_pop($stack));
+        $this->assertEmpty($stack);
     }
 }
 ?>]]></programlisting>
     </example>
 
     <para>
-      Dans l'exemple ci-dessus, le premier test, <literal>testVide()</literal>,
+      Dans l'exemple ci-dessus, le premier test, <literal>testEmpty()</literal>,
       crée un nouveau tableau et affirme qu'il est vide. Le test renvoie ensuite
       la fixture comme résultat. Le deuxième test, <literal>testPush()</literal>,
-      dépend de <literal>testVide()</literal> et reçoit le résultat de ce test
+      dépend de <literal>testEmpty()</literal> et reçoit le résultat de ce test
       dont il dépend comme argument. Enfin, <literal>testPop()</literal>
       dépend de <literal>testPush()</literal>.
     </para>
+
+    <note>
+      <para>
+        <indexterm><primary>Annotation</primary></indexterm>
+        <indexterm><primary>@depends</primary></indexterm>
+
+        La valeur de retour produite par un producteur est passée "telle quelle" à son
+        consommateur par défaut. Cela signifie que lorsqu'un producteur renvoie un objet,
+        une référence vers cet objet est passée a son consommateur. Lorsqu'une copie
+        doit être utilisée au lieu d'une référence alors <code>@depends clone</code>
+        doit être utilisé au lieu de <code>@depends</code>.
+      </para>
+    </note>
 
     <para>
       <indexterm><primary>Localisation des défauts</primary></indexterm>
@@ -142,25 +158,26 @@ class PileTest extends PHPUnit_Framework_TestCase
       Pour localiser rapidement les défauts, nous voulons que notre attention soit
       retenue par les tests en échecs pertinents. C'est pourquoi PHPUnit saute
       l'exécution d'un test quand un test dont il dépend a échoué. Ceci améliore la
-      localisation des défauts en exploitant les dépendances entre les tests comme
-      montré dans
+      localisation des défauts en exploitant les dépendances entre les tests comme montré dans
       <xref linkend="writing-tests-for-phpunit.examples.DependencyFailureTest.php" />.
     </para>
 
     <example id="writing-tests-for-phpunit.examples.DependencyFailureTest.php">
       <title>Exploiter les dépendances entre les tests</title>
       <programlisting><![CDATA[<?php
-class DependencyFailureTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class DependencyFailureTest extends TestCase
 {
-    public function testUn()
+    public function testOne()
     {
-        $this->assertTrue(FALSE);
+        $this->assertTrue(false);
     }
 
     /**
-     * @depends testUn
+     * @depends testOne
      */
-    public function testDeux()
+    public function testTwo()
     {
     }
 }
@@ -175,15 +192,15 @@ Time: 0 seconds, Memory: 5.00Mb
 
 There was 1 failure:
 
-1) DependencyFailureTest::testUn
+1) DependencyFailureTest::testOne
 Failed asserting that false is true.
 
 /home/sb/DependencyFailureTest.php:6
 
 There was 1 skipped test:
 
-1) DependencyFailureTest::testDeux
-This test depends on "DependencyFailureTest::testUn" to pass.
+1) DependencyFailureTest::testTwo
+This test depends on "DependencyFailureTest::testOne" to pass.
 
 
 FAILURES!
