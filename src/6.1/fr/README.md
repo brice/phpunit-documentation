@@ -46,7 +46,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
 | test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
-| testing-practices.xml             | NOK       |                |                          |
+| testing-practices.xml             | OK        | @gbprod        |                          |
 | textui.xml                        | NOK       |                |                          |
 | writing-tests-for-phpunit.xml     | NOK       |                |                          |
 
