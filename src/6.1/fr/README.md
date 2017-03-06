@@ -42,7 +42,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
 | logging.xml                       | NOK       |                |                          |
-| organizing-tests.xml              | NOK       |                |                          |
+| organizing-tests.xml              | OK        | @gbprod        |                          |
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
 | test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
