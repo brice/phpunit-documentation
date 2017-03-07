@@ -42,10 +42,10 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
 | logging.xml                       | NOK       |                |                          |
-| organizing-tests.xml              | NOK       |                |                          |
+| organizing-tests.xml              | OK        | @gbprod        | done                     |
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
-| test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
+| test-doubles.xml                  | En cours  | @brice         | 566/1032                 |
 | testing-practices.xml             | OK        | @gbprod        |                          |
 | textui.xml                        | NOK       |                |                          |
 | writing-tests-for-phpunit.xml     | NOK       |                |                          |
@@ -70,6 +70,7 @@ extension:		extensions
 code coverage:	couverture de code
 appendix:       annexe
 fixture:        fixture (pas trouvé mieux en français)
+stub:           bouchon
 
 verbe ing: 	traduits par l'infinitif dans les titres: testing => tester
 
