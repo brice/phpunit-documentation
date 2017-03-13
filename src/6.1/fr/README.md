@@ -38,7 +38,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | database.xml                      | NOK       |                |                          |
 | extending-phpunit.xml             | NOK       |                |                          |
 | fixtures.xml                      | NOK       |                |                          |
-| incomplete-and-skipped-tests.xml  | NOK       |                |                          |
+| incomplete-and-skipped-tests.xml  | OK        | @gbprod        |                          |
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
 | logging.xml                       | NOK       |                |                          |
