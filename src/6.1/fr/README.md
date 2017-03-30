@@ -48,7 +48,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | test-doubles.xml                  | En cours  | @brice         | 665/1170                 |
 | testing-practices.xml             | NOK       |                |                          |
 | textui.xml                        | NOK       |                |                          |
-| writing-tests-for-phpunit.xml     | NOK       |                |                          |
+| writing-tests-for-phpunit.xml     | NOK       | @gbprod        | done                     |
 
 
 ## Guide de traduction

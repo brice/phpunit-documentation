@@ -998,17 +998,17 @@ FAILURES!
 Tests: 1, Assertions: 1, Failures: 1.]]></screen>
     </example>
     <section id="writing-tests-for-phpunit.error-output.edge-cases">
-      <title>Edge cases</title>
+      <title>Cas limite</title>
 
       <para>
-        When a comparison fails PHPUnit creates textual representations of the
-        input values and compares those. Due to that implementation a diff
-        might show more problems than actually exist.
+        Quand une comparaison échoue, PHPUnit crée une représentation textuel des
+        valeurs d'entrées et les compare. A cause de cette implémentation un diff
+        peut montrer plus de problèmes qu'il n'en existe réellement.
       </para>
 
       <para>
-        This only happens when using assertEquals or other 'weak' comparison
-        functions on arrays or objects.
+        Cela arrive seulement lors de l'utilisation de assetEquals ou d'autres fonction
+        de comparaison "faible" sur les tableaux ou les objets.
       </para>
 
       <example id="writing-tests-for-phpunit.error-output.edge-cases.examples.ArrayWeakComparisonTest.php">
