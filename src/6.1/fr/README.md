@@ -28,7 +28,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 
 | Fichier                           | Etat      | Contributeurs  | Nb ligne revues/Total    |
 | --------------------------------- | :-------: | :------------: | :----------------------: |
-| annotations.xml                   | En cours  | @brice         | 30/511                   |
+| annotations.xml                   | En cours  | @brice         | 218/610                   |
 | assertions.xml                    | NOK       |                |                          |
 | bibliography.xml                  | NOK       |                |                          |
 | book.xml                          | NOK       |                |                          |
