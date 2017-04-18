@@ -41,15 +41,16 @@
     <title>PHP Archive (PHAR)</title>
 
     <para>
+      La manière la plus simple d'obtenir PHPUnit est de télécharger une
       The easiest way to obtain PHPUnit is to download a <ulink
-            url="http://php.net/phar">PHP Archive (PHAR)</ulink> that has all required
-      (as well as some optional) dependencies of PHPUnit bundled in a single
-      file.
+            url="http://php.net/phar">Archive PHP (PHAR)</ulink> qui continer toutes les dépendances
+      requises (ainsi que certaines optionnelles) de PHPUnit archivées en un seul
+      fichier.
     </para>
 
     <para>
-      The <ulink url="http://php.net/manual/en/phar.installation.php">phar</ulink>
-      extension is required for using PHP Archives (PHAR).
+      L'extension <ulink url="http://php.net/manual/en/phar.installation.php">phar</ulink>
+      est requise pour utilisé les archives PHP (PHAR).
     </para>
 
     <para>

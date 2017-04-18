@@ -568,48 +568,55 @@ class Observer
 
       <xref linkend="test-doubles.mock-objects.examples.SubjectTest.php" />
       illustre comment utiliser un simulacre pour tester l'interaction entre
-      les objets <literal>Sujet</literal> et <literal>Observateur</literal>.
+      les objets <literal>Subject</literal> et <literal>Observer</literal>.
     </para>
 
     <para>
-      Nous utilisons d'abord la méthode <literal>getMock()</literal> qui est fournie par
-      la classe <literal>PHPUnit_Framework_TestCase</literal> pour configurer un simulacre
-      pour l'<literal>Observateur</literal>. Puisque nous donnons un tableau comme second
+      Nous utilisons d'abord la méthode <literal>getMockBuilder()</literal> qui est fournie par
+      la classe <literal>PHPUnit\Framework\TestCase</literal> pour configurer un simulacre
+      pour <literal>Observer</literal>. Puisque nous donnons un tableau comme second
       paramètre (facultatif) pour la méthode <literal>getMock()</literal>,
-      seule la méthode <literal>update()</literal> de la classe <literal>Observateur</literal> est
+      seule la méthode <literal>update()</literal> de la classe <literal>Observer</literal> est
       remplacée par une implémentation d'un simulacre.
+    </para>
+
+    <para>
+      Comme ce qui nous intéresse est de vérifier qu'une méthode soit appelée,
+      et avec quels arguments, nous introduisons les méthodes <literal>expects()</literal>
+      et <literal>with()</literal> pour spécifier comment cette interaction doit se présenter.
     </para>
 
     <example id="test-doubles.mock-objects.examples.SubjectTest.php">
       <title>Tester qu'une méthode est appelée une fois et avec un paramètre indiqué</title>
       <programlisting><![CDATA[<?php
+use PHPUnit\Framework\TestCase;
 
-require_once 'Sujet.php';
-
-class SujetTest extends PHPUnit_Framework_TestCase
+class SubjectTest extends TestCase
 {
-    public function testLesObservateursSontMisAJour()
+    public function testObserversAreUpdated()
     {
-        // Créer un simulacre pour la classe Observateur,
+        // Créer un simulacre pour la classe Observer,
         // ne touchant que la méthode update().
-        $observateur = $this->getMock('Observateur', array('update'));
+        $observer = $this->getMockBuilder(Observer::class)
+                         ->setMethods(['update'])
+                         ->getMock();
 
         // Configurer l'attente de la méthode update()
-        // d'être appelée une seule fois et avec la chaîne 'quelquechose'
+        // d'être appelée une seule fois et avec la chaîne 'something'
         // comme paramètre.
-        $observateur->expects($this->once())
+        $observer->expects($this->once())
                  ->method('update')
-                 ->with($this->equalTo('quelque chose'));
+                 ->with($this->equalTo('something'));
 
-        // Créer un objet Sujet et y attacher l'objet Observateur
-        // simulé
-        $sujet = new Sujet;
-        $sujet->attache($observateur);
+        // Créer un objet Subject et y attacher l'objet
+        // Observer simulé
+        $subject = new Subject('My subject');
+        $subject->attach($observer);
 
-        // Appeler la méthode faireQuelquechose() sur l'objet $sujet
+        // Appeler la méthode doSomething() sur l'objet $subject
         // que nous attendons voir appeler la méthode update() de l'objet
-        // simulé Observateur avec la chaîne 'quelqueChose'.
-        $sujet->faireQuelquechose();
+        // simulé Observer avec la chaîne 'something'.
+        $subject->doSomething();
     }
 }
 ?>]]></programlisting>
@@ -618,33 +625,164 @@ class SujetTest extends PHPUnit_Framework_TestCase
     <para>
       La méthode <literal>with()</literal> peut prendre n'importe quel
       nombre de paramètres, correspondant au nombre de paramètres des méthodes
-      étant simulées. Vous pouvez indiquer des contraintes plus avancées
-      sur les paramètres de méthode qu'une simple correspondance.
+      simulées. Vous pouvez indiquer des contraintes plus avancées qu'une simple
+      correspondance, sur les paramètres de méthode.
     </para>
 
     <example id="test-doubles.mock-objects.examples.MultiParameterTest.php">
-      <title>Tester qu'une méthode est appelée avec un nombre de paramètres contraints de différentes manières</title>
+      <title>Tester qu'une méthode est appelée avec un nombre de paramètres
+      contraints de différentes manières</title>
       <programlisting><![CDATA[<?php
-class SubjectTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class SubjectTest extends TestCase
 {
-    public function testRapportErreur()
+    public function testErrorReported()
     {
-        // Créer un simulacre pour la classe Observateur, en simulant
-        // la méthode rapportErreur()
-        $observateur = $this->getMock('Observateur', array('rapportErreur'));
+        // Créer un simulacre pour la classe Observer, en simulant
+        // la méthode reportError()
+        $observer = $this->getMockBuilder(Observer::class)
+                         ->setMethods(['reportError'])
+                         ->getMock();
 
-        $observateur->expects($this->once())
-                 ->method('rapportErreur')
+        $observer->expects($this->once())
+                 ->method('reportError')
+                 ->with(
+                       $this->greaterThan(0),
+                       $this->stringContains('Something'),
+                       $this->anything()
+                   );
+
+        $subject = new Subject('My subject');
+        $subject->attach($observer);
+
+        // La méthode doSomethingBad() doit rapporter une erreur à l'observateur
+        // via la méthode reportError()
+        $subject->doSomethingBad();
+    }
+}
+?>]]></programlisting>
+    </example>
+
+    <para>
+      The <literal>withConsecutive()</literal> method can take any number of
+      arrays of arguments, depending on the calls you want to test against.
+      Each array is a list of constraints corresponding to the arguments of the
+      method being mocked, like in <literal>with()</literal>.
+    </para>
+
+    <example id="test-doubles.mock-objects.examples.with-consecutive.php">
+      <title>Testing that a method gets called two times with specific arguments.</title>
+      <programlisting><![CDATA[<?php
+use PHPUnit\Framework\TestCase;
+
+class FooTest extends TestCase
+{
+    public function testFunctionCalledTwoTimesWithSpecificArguments()
+    {
+        $mock = $this->getMockBuilder(stdClass::class)
+                     ->setMethods(['set'])
+                     ->getMock();
+
+        $mock->expects($this->exactly(2))
+             ->method('set')
+             ->withConsecutive(
+                 [$this->equalTo('foo'), $this->greaterThan(0)],
+                 [$this->equalTo('bar'), $this->greaterThan(0)]
+             );
+
+        $mock->set('foo', 21);
+        $mock->set('bar', 48);
+    }
+}
+?>]]></programlisting>
+    </example>
+
+    <para>
+      The <literal>callback()</literal> constraint can be used for more complex
+      argument verification. This constraint takes a PHP callback as its only
+      argument. The PHP callback will receive the argument to be verified as
+      its only argument and should return <literal>true</literal> if the
+      argument passes verification and <literal>false</literal> otherwise.
+    </para>
+
+    <example id="test-doubles.mock-objects.examples.SubjectTest3.php">
+      <title>More complex argument verification</title>
+      <programlisting><![CDATA[<?php
+use PHPUnit\Framework\TestCase;
+
+class SubjectTest extends TestCase
+{
+    public function testErrorReported()
+    {
+        // Create a mock for the Observer class, mocking the
+        // reportError() method
+        $observer = $this->getMockBuilder(Observer::class)
+                         ->setMethods(['reportError'])
+                         ->getMock();
+
+        $observer->expects($this->once())
+                 ->method('reportError')
                  ->with($this->greaterThan(0),
-                        $this->stringContains('Quelquechose'),
-                        $this->anything());
+                        $this->stringContains('Something'),
+                        $this->callback(function($subject){
+                          return is_callable([$subject, 'getName']) &&
+                                 $subject->getName() == 'My subject';
+                        }));
 
-        $sujet = new Subject;
-        $sujet->attach($observateur);
+        $subject = new Subject('My subject');
+        $subject->attach($observer);
 
-        // La méthode faireQuelquechoseDeMal doit rapporter une erreur à l'observateur
-        // via la méthode rapportErreur()
-        $sujet->faireQuelquechoseDeMal();
+        // The doSomethingBad() method should report an error to the observer
+        // via the reportError() method
+        $subject->doSomethingBad();
+    }
+}
+?>]]></programlisting>
+    </example>
+
+    <example id="test-doubles.mock-objects.examples.clone-object-parameters-usecase.php">
+      <title>Testing that a method gets called once and with the identical object as was passed</title>
+      <programlisting><![CDATA[<?php
+use PHPUnit\Framework\TestCase;
+
+class FooTest extends TestCase
+{
+    public function testIdenticalObjectPassed()
+    {
+        $expectedObject = new stdClass;
+
+        $mock = $this->getMockBuilder(stdClass::class)
+                     ->setMethods(['foo'])
+                     ->getMock();
+
+        $mock->expects($this->once())
+             ->method('foo')
+             ->with($this->identicalTo($expectedObject));
+
+        $mock->foo($expectedObject);
+    }
+}
+?>]]></programlisting>
+    </example>
+
+    <example id="test-doubles.mock-objects.examples.enable-clone-object-parameters.php">
+      <title>Create a mock object with cloning parameters enabled</title>
+      <programlisting><![CDATA[<?php
+use PHPUnit\Framework\TestCase;
+
+class FooTest extends TestCase
+{
+    public function testIdenticalObjectPassed()
+    {
+        $cloneArguments = true;
+
+        $mock = $this->getMockBuilder(stdClass::class)
+                     ->enableArgumentCloning()
+                     ->getMock();
+
+        // now your mock clones parameters so the identicalTo constraint
+        // will fail.
     }
 }
 ?>]]></programlisting>
