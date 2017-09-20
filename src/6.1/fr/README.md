@@ -36,7 +36,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | configuration.xml                 | NOK       |                |                          |
 | copyright.xml                     | NOK       |                |                          |
 | database.xml                      | NOK       |                |                          |
-| extending-phpunit.xml             | NOK       |                |                          |
+| extending-phpunit.xml             | OK        | @gbprod        |                          |
 | fixtures.xml                      | NOK       |                |                          |
 | incomplete-and-skipped-tests.xml  | NOK       |                |                          |
 | index.xml                         | NOK       |                |                          |
