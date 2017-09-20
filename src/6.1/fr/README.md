@@ -45,11 +45,10 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | organizing-tests.xml              | OK        | @gbprod        | done                     |
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
-| test-doubles.xml                  | En cours  | @brice         | 665/1170                 |
+| test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
 | testing-practices.xml             | OK        | @gbprod        |                          |
 | textui.xml                        | NOK       |                |                          |
 | writing-tests-for-phpunit.xml     | NOK       | @gbprod        | done                     |
-
 
 ## Guide de traduction
 
