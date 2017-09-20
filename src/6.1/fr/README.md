@@ -36,19 +36,19 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | configuration.xml                 | NOK       |                |                          |
 | copyright.xml                     | NOK       |                |                          |
 | database.xml                      | NOK       |                |                          |
-| extending-phpunit.xml             | OK        | @gbprod        |                          |
+| extending-phpunit.xml             | OK        | @gbprod        | done                     |
 | fixtures.xml                      | NOK       |                |                          |
-| incomplete-and-skipped-tests.xml  | OK        | @gbprod        |                          |
+| incomplete-and-skipped-tests.xml  | OK        | @gbprod        | done                     |
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
-| logging.xml                       | OK        | @gbprod        |                          |
+| logging.xml                       | OK        | @gbprod        | done                     |
 | organizing-tests.xml              | OK        | @gbprod        | done                     |
-| other-uses-for-tests.xml          | NOK       |                |                          |
-| risky-tests.xml                   | NOK       |                |                          |
+| other-uses-for-tests.xml          | OK        | @gbprod        | done                     |
+| risky-tests.xml                   | OK        | @gbprod        | done                     |
 | test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
-| testing-practices.xml             | OK        | @gbprod        |                          |
-| textui.xml                        | NOK       |                |                          |
-| writing-tests-for-phpunit.xml     | NOK       | @gbprod        | done                     |
+| testing-practices.xml             | OK        | @gbprod        | done                     |
+| textui.xml                        | OK        | @gbprod        | done                     |
+| writing-tests-for-phpunit.xml     | OK        | @gbprod        | done                     |
 
 ## Guide de traduction
 
