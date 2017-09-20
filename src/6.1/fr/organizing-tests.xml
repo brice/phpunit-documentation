@@ -22,8 +22,8 @@
     <title>Composer une suite de tests en utilisant le système de fichiers</title>
 
     <para>
-      La façon probablement la plus simple de composer une suite de tests est de conserver
-      tous les fichiers sources des cas de test dans un répertoire test. PHPUnit peut
+      La façon probablement la plus simple d'organiser une suite de tests est de mettre
+      tous les fichiers sources des cas de test dans un répertoire de tests. PHPUnit peut
       automatiquement trouver et exécuter les tests en parcourant récursivement le répertoire test.
     </para>
 
@@ -98,7 +98,7 @@ OK (2 test, 2 assertions)</screen>
         l'ordre dans lequel les tests sont exécutés. Ceci peut conduire à des problèmes
         concernant les dépendances des tests, voir <xref linkend="writing-tests-for-phpunit.test-dependencies"/>.
         Dans la prochaine section, nous verrons comment nous pouvons rendre
-        l'ordre d'exécution des tests explicité en utilisant le fichier de configuration XML.
+        l'ordre d'exécution des tests explicite en utilisant le fichier de configuration XML.
       </para>
     </note>
   </section>
