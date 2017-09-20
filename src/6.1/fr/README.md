@@ -41,11 +41,12 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod        | done                     |
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
+|                                   |           | @methylbro     |                          |
 | logging.xml                       | OK        | @gbprod        | done                     |
 | organizing-tests.xml              | OK        | @gbprod        | done                     |
 | other-uses-for-tests.xml          | OK        | @gbprod        | done                     |
 | risky-tests.xml                   | OK        | @gbprod        | done                     |
-| test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
+| test-doubles.xml                  | En cours  | @brice @gbprod | 172/1045                 |
 | testing-practices.xml             | OK        | @gbprod        | done                     |
 | textui.xml                        | OK        | @gbprod        | done                     |
 | writing-tests-for-phpunit.xml     | OK        | @gbprod        | done                     |
