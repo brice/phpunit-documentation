@@ -28,7 +28,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 
 | Fichier                           | Etat      | Contributeurs  | Nb ligne revues/Total    |
 | --------------------------------- | :-------: | :------------: | :----------------------: |
-| annotations.xml                   | En cours  | @brice         | 30/511                   |
+| annotations.xml                   | En cours  | @brice         | 218/610                   |
 | assertions.xml                    | NOK       |                |                          |
 | bibliography.xml                  | NOK       |                |                          |
 | book.xml                          | NOK       |                |                          |
@@ -36,20 +36,19 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | configuration.xml                 | NOK       |                |                          |
 | copyright.xml                     | NOK       |                |                          |
 | database.xml                      | NOK       |                |                          |
-| extending-phpunit.xml             | NOK       |                |                          |
+| extending-phpunit.xml             | OK        | @gbprod        |                          |
 | fixtures.xml                      | NOK       |                |                          |
-| incomplete-and-skipped-tests.xml  | NOK       |                |                          |
+| incomplete-and-skipped-tests.xml  | OK        | @gbprod        |                          |
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
-| logging.xml                       | NOK       |                |                          |
-| organizing-tests.xml              | NOK       |                |                          |
+| logging.xml                       | OK        | @gbprod        |                          |
+| organizing-tests.xml              | OK        | @gbprod        | done                     |
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
 | test-doubles.xml                  | En cours  | @brice         | 172/1045                 |
-| testing-practices.xml             | NOK       |                |                          |
-| textui.xml                        | OK        | @gbprod        |                          |
-| writing-tests-for-phpunit.xml     | NOK       |                |                          |
-
+| testing-practices.xml             | OK        | @gbprod        |                          |
+| textui.xml                        | NOK       |                |                          |
+| writing-tests-for-phpunit.xml     | NOK       | @gbprod        | done                     |
 
 ## Guide de traduction
 
@@ -70,6 +69,7 @@ extension:		extensions
 code coverage:	couverture de code
 appendix:       annexe
 fixture:        fixture (pas trouvé mieux en français)
+stub:           bouchon
 
 verbe ing: 	traduits par l'infinitif dans les titres: testing => tester
 

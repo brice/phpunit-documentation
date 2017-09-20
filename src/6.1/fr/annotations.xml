@@ -42,6 +42,67 @@
     </para>
   </section>
 
+  <section id="appendixes.annotations.after">
+    <title>@after</title>
+
+    <para>
+
+      L'annotation <literal>@after</literal> peut être utilisé pour spécifier des méthodes
+      devant être appelées après chaque méthode de test dans une classe de cas de tests.
+      <programlisting>use PHPUnit\Framework\TestCase;
+
+class MyTest extends TestCase
+{
+    /**
+     * @after
+     */
+    public function tearDownSomeFixtures()
+    {
+        // ...
+    }
+
+    /**
+     * @after
+     */
+    public function tearDownSomeOtherFixtures()
+    {
+        // ...
+    }
+}</programlisting>
+    </para>
+  </section>
+
+  <section id="appendixes.annotations.afterClass">
+    <title>@afterClass</title>
+
+    <para>
+
+      L'annotation <literal>@afterClass</literal> peut-être utilisées pour spécifier
+      des méthodes statiques devant être appelées après chaque méthode de test
+      dans une classe de test pour être exécuté afin de nettoyer des fixtures partagées.
+      <programlisting>use PHPUnit\Framework\TestCase;
+
+class MyTest extends TestCase
+{
+    /**
+     * @afterClass
+     */
+    public static function tearDownSomeSharedFixtures()
+    {
+        // ...
+    }
+
+    /**
+     * @afterClass
+     */
+    public static function tearDownSomeOtherSharedFixtures()
+    {
+        // ...
+    }
+}</programlisting>
+    </para>
+  </section>
+
   <section id="appendixes.annotations.backupGlobals">
     <title>@backupGlobals</title>
 
@@ -49,11 +110,13 @@
       <indexterm><primary><literal>@backupGlobals</literal></primary></indexterm>
 
       Les opérations de sauvegarde et de restauration des variables globales peuvent
-      être complètement désactivées pour tous les tests d'une classe de cas de test
-      comme ceci : <programlisting>/**
+      être complètement désactivées pour tous les tests d'une classe de cas de test comme ceci : <programlisting>
+      use PHPUnit\Framework\TestCase;
+
+/**
  * @backupGlobals disabled
  */
-class MonTest extends PHPUnit_Framework_TestCase
+class MyTest extends TestCase
 {
     // ...
 }</programlisting>
@@ -62,11 +125,14 @@ class MonTest extends PHPUnit_Framework_TestCase
     <para>
       <indexterm><primary><literal>@backupGlobals</literal></primary></indexterm>
 
-      L'annotation <literal>@backupGlobals</literal> peut également être utilisée sur les opérations
-      de sauvegarde et de restauration : <programlisting>/**
+      L'annotation <literal>@backupGlobals</literal> peut également être
+      utilisée au niveau d'une méthode. Cela permet une configuration fine des
+      des opérations de sauvegarde et de restauration : <programlisting>use PHPUnit\Framework\TestCase;
+
+/**
  * @backupGlobals disabled
  */
-class MonTest extends PHPUnit_Framework_TestCase
+class MyTest extends TestCase
 {
     /**
      * @backupGlobals enabled
@@ -85,32 +151,65 @@ class MonTest extends PHPUnit_Framework_TestCase
     <para>
       <indexterm><primary><literal>@backupStaticAttributes</literal></primary></indexterm>
 
-      Les opérations de sauvegarde et de restauration pour les attributs statiques
-      des classes peuvent être complètement désactivés pour tous les tests d'une classe
-      de cas de test comme ceci :
-      <programlisting>/**
- * @backupStaticAttributes disabled
- */
-class MonTest extends PHPUnit_Framework_TestCase
-{
-    // ...
-}</programlisting>
-    </para>
+      L'annotation <literal>@backupStaticAttributes</literal> peut être utilisée pour
+      enregistrer tous les attributs statiques dans toutes les classes déclarées
+      avant chaque test et restauré après. Elle peut être utilisé au niveau de la classe ou
+      au niveau de la méthode :
 
-    <para>
-      <indexterm><primary><literal>@backupStaticAttributes</literal></primary></indexterm>
+      <programlisting>use PHPUnit\Framework\TestCase;
 
-      L'annotation <literal>@backupStaticAttributes</literal> peut également être utilisée au 
-      niveau d'une méthode de test. Ceci permet une configuration plus fine des opérations
-      de sauvegarde et de restauration: <programlisting>/**
- * @backupStaticAttributes disabled
+/**
+ * @backupStaticAttributes enabled
  */
-class MonTest extends PHPUnit_Framework_TestCase
+class MyTest extends TestCase
 {
     /**
-     * @backupStaticAttributes enabled
+     * @backupStaticAttributes disabled
      */
-    public function testQuiInteragitAvecDesAttributsStatiques()
+    public function testThatInteractsWithStaticAttributes()
+    {
+        // ...
+    }
+}
+</programlisting>
+    </para>
+
+    <note>
+      <para>
+        <literal>@backupStaticAttributes</literal> est limitée par le fonctionnement interne de PHP
+        et peut entrainer la persistance de valeurs statique et perturbé
+        d'autres tests dans certaines circonstances.
+      </para>
+      <para>
+        Voir <xref linkend="fixtures.global-state"/> pour les détails.
+      </para>
+    </note>
+
+  </section>
+
+  <section id="appendixes.annotations.before">
+    <title>@before</title>
+
+    <para>
+
+      L'annotation <literal>@before</literal> peut-être utilisée pour spécifié des méthodes
+      devant être appelées avant chaque méthode de test dans une classe de cas de test.
+      <programlisting>use PHPUnit\Framework\TestCase;
+
+class MyTest extends TestCase
+{
+    /**
+     * @before
+     */
+    public function setupSomeFixtures()
+    {
+        // ...
+    }
+
+    /**
+     * @before
+     */
+    public function setupSomeOtherFixtures()
     {
         // ...
     }
@@ -492,7 +591,7 @@ public function balanceInitialeDoitEtre0()
 
     <para>
       <indexterm><primary>TestDox</primary></indexterm>
-      <indexterm><primary>@testdox</primary></indexterm>
+      <indexte218rm><primary>@testdox</primary></indexterm>
     </para>
 
     <programlisting></programlisting>
