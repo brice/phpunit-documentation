@@ -41,7 +41,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod        |                          |
 | index.xml                         | NOK       |                |                          |
 | installation.xml                  | En cours  | @brice         |                          |
-| logging.xml                       | NOK       |                |                          |
+| logging.xml                       | OK        | @gbprod        |                          |
 | organizing-tests.xml              | OK        | @gbprod        | done                     |
 | other-uses-for-tests.xml          | NOK       |                |                          |
 | risky-tests.xml                   | NOK       |                |                          |
