@@ -30,7 +30,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | --------------------------------- | :-------: | :------------: | :----------------------: |
 | annotations.xml                   | En cours  | @brice         | 218/610                   |
 | assertions.xml                    | NOK       |                |                          |
-| bibliography.xml                  | NOK       |                |                          |
+| bibliography.xml                  | OK        | @gbprod        | done                     |
 | book.xml                          | NOK       |                |                          |
 | code-coverage-analysis.xml        | En cours  | @brice         |                          |
 | configuration.xml                 | NOK       |                |                          |
