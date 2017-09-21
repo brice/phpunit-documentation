@@ -39,7 +39,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | extending-phpunit.xml             | OK        | @gbprod        | done                     |
 | fixtures.xml                      | NOK       |                |                          |
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod        | done                     |
-| index.xml                         | NOK       |                |                          |
+| index.xml                         | OK        | @gbprod        |                          |
 | installation.xml                  | En cours  | @brice         |                          |
 |                                   |           | @methylbro     |                          |
 | logging.xml                       | OK        | @gbprod        | done                     |
