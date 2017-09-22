@@ -28,10 +28,10 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 
 | Fichier                           | Etat      | Contributeurs  | Nb ligne revues/Total    |
 | --------------------------------- | :-------: | :------------: | :----------------------: |
-| annotations.xml                   | En cours  | @brice         | 218/610                   |
+| annotations.xml                   | En cours  | @brice         | 218/610                  |
 | assertions.xml                    | NOK       |                |                          |
 | bibliography.xml                  | OK        | @gbprod        | done                     |
-| book.xml                          | NOK       |                |                          |
+| book.xml                          | OK        | @gbprod        | done                     |
 | code-coverage-analysis.xml        | En cours  | @brice         |                          |
 | configuration.xml                 | NOK       |                |                          |
 | copyright.xml                     | NOK       |                |                          |
