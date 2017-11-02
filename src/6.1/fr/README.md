@@ -37,7 +37,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | copyright.xml                     | NOK       |                |                          |
 | database.xml                      | NOK       |                |                          |
 | extending-phpunit.xml             | OK        | @gbprod        | done                     |
-| fixtures.xml                      | NOK       |                |                          |
+| fixtures.xml                      | OK        | @gbprod        | done                     |
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod        | done                     |
 | index.xml                         | OK        | @gbprod        |                          |
 | installation.xml                  | En cours  | @brice         |                          |
