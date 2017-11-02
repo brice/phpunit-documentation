@@ -28,13 +28,13 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 
 | Fichier                           | Etat      | Contributeurs     | Nb ligne revues/Total    |
 | --------------------------------- | :-------: | :---------------: | :----------------------: |
-| annotations.xml                   | En cours  | @brice @gbprod    | done                  |
+| annotations.xml                   | OK        | @brice @gbprod    | done                     |
 | assertions.xml                    | OK        | @gbprod           | done                     |
 | bibliography.xml                  | OK        | @gbprod           | done                     |
 | book.xml                          | OK        | @gbprod           | done                     |
 | code-coverage-analysis.xml        | En cours  | @brice            |                          |
 | configuration.xml                 | NOK       |                   |                          |
-| copyright.xml                     | NOK       |                   |                          |
+| copyright.xml                     | OK        | @gbprod           | done                     |
 | database.xml                      | NOK       |                   |                          |
 | extending-phpunit.xml             | OK        | @gbprod           | done                     |
 | fixtures.xml                      | OK        | @gbprod           | done                     |
