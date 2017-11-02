@@ -33,7 +33,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | bibliography.xml                  | OK        | @gbprod           | done                     |
 | book.xml                          | OK        | @gbprod           | done                     |
 | code-coverage-analysis.xml        | En cours  | @brice            |                          |
-| configuration.xml                 | NOK       |                   |                          |
+| configuration.xml                 | OK        | @gbprod           | done                     |
 | copyright.xml                     | OK        | @gbprod           | done                     |
 | database.xml                      | NOK       |                   |                          |
 | extending-phpunit.xml             | OK        | @gbprod           | done                     |
