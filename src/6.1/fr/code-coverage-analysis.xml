@@ -4,24 +4,40 @@
   <title>Analyse de couverture de code</title>
 
   <blockquote>
-    <attribution>Murali Nandigama</attribution>
+    <attribution>Wikipedia</attribution>
     <para>
-      La beauté du test ne se trouve pas dans l'effort mais dans l'efficience.
-    </para>
-    <para>
-      Savoir ce qui doit être testé est magnifique, et savoir ce qui est testé
-      est magnifique.
+      La couverture de code (en anglais : code coverage) est une mesure utilisée
+      en génie logiciel pour décrire le taux de code source testé d'un programme.
+      Ceci permet de mesurer la qualité des tests effectués.
+
+      In computer science, code coverage is a measure used to describe the
+      degree to which the source code of a program is tested by a particular
+      test suite. A program with high code coverage has been more thoroughly
+      tested and has a lower chance of containing software bugs than a program
+      with low code coverage.
     </para>
   </blockquote>
-
   <para>
     <indexterm><primary>Couverture de code</primary></indexterm>
+    <indexterm><primary>Xdebug</primary></indexterm>
 
     Dans ce chapitre, vous apprendrez tout sur la fonctionnalité de couverture
     de code de PHPUnit qui fournit une vision interne des parties du code de 
-    production qui sont exécutées quand les tests sont exécutés. Cela aide à
-    répondre à des questions comme :
+    production qui sont exécutées quand les tests sont exécutés. Elle utilise le composant
+    <ulink url="https://github.com/sebastianbergmann/php-code-coverage">PHP_CodeCoverage</ulink>
+    qui tire parti de la fonctionnalité de couverture de code fournie par l'extension
+    <ulink url="http://xdebug.org/">Xdebug</ulink> de PHP.
   </para>
+
+  <note>
+    <para>
+      Xdebug n'est pas distribué au sein de PHPUnit. Si une notice indiquant que
+      l'extension Xdebug n'est pas chargé en lançant les tests, cela signifie que
+      Xdebug n'est pas installé ou n'est pas configuré correctement. Avant de pouvoir
+      utiliser les fonctionnalités de couverture de code dans PHPUnit, vous devez lire
+      <ulink url="http://xdebug.org/docs/install">le guide d'installation de Xdebug.</ulink>.
+    </para>
+  </note>
 
   <itemizedlist>
     <listitem>
