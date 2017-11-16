@@ -32,14 +32,14 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | assertions.xml                    | OK        | @gbprod           | done                     |
 | bibliography.xml                  | OK        | @gbprod           | done                     |
 | book.xml                          | OK        | @gbprod           | done                     |
-| code-coverage-analysis.xml        | En cours  | @brice            |                          |
+| code-coverage-analysis.xml        | OK        | @brice @gbprod    | done                     |
 | configuration.xml                 | OK        | @gbprod           | done                     |
 | copyright.xml                     | OK        | @gbprod           | done                     |
 | database.xml                      | NOK       |                   |                          |
 | extending-phpunit.xml             | OK        | @gbprod           | done                     |
 | fixtures.xml                      | OK        | @gbprod           | done                     |
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod           | done                     |
-| index.xml                         | OK        | @gbprod           |                          |
+| index.xml                         | OK        | @gbprod           | done                     |
 | installation.xml                  | En cours  | @brice @methylbro |                          |
 | logging.xml                       | OK        | @gbprod           | done                     |
 | organizing-tests.xml              | OK        | @gbprod           | done                     |
