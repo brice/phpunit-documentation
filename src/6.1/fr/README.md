@@ -40,7 +40,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | fixtures.xml                      | OK        | @gbprod           | done                     |
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod           | done                     |
 | index.xml                         | OK        | @gbprod           | done                     |
-| installation.xml                  | En cours  | @brice @methylbro |                          |
+| installation.xml                  | OK        | @brice @methylbro @gbprod | done             |
 | logging.xml                       | OK        | @gbprod           | done                     |
 | organizing-tests.xml              | OK        | @gbprod           | done                     |
 | other-uses-for-tests.xml          | OK        | @gbprod           | done                     |
