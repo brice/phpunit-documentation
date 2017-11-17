@@ -7,24 +7,26 @@
     <title>Pré-requis</title>
 
     <para>
-      PHPUnit 6.1 nécessite PHP 7; utiliser la dernière version de PHP est fortement recommandé.
+      PHPUnit 6.1 nécessite PHP 7; utiliser la dernière version de PHP est fortement
+      recommandé.
     </para>
 
     <para>
       PHPUnit nécessite les extensions <ulink
-            url="http://php.net/manual/en/dom.setup.php">dom</ulink> et <ulink
-            url="http://php.net/manual/en/json.installation.php">json</ulink>
+      url="http://php.net/manual/en/dom.setup.php">dom</ulink> et <ulink
+      url="http://php.net/manual/en/json.installation.php">json</ulink>
       qui sont traditionnellement activées par défaut.
     </para>
 
     <para>
       PHPUnit nécessite aussi les extensions
       <ulink
-              url="http://php.net/manual/en/pcre.installation.php">pcre</ulink>,
+      url="http://php.net/manual/en/pcre.installation.php">pcre</ulink>,
       <ulink
-              url="http://php.net/manual/en/reflection.installation.php">reflection</ulink>,
-      et <ulink url="http://php.net/manual/en/spl.installation.php">spl</ulink>
-      . Ces extensions standard sont activées par défaut et ne peuvent être désactivées sans patcher le système de construction de PHP ou/et les sources en C.
+      url="http://php.net/manual/en/reflection.installation.php">reflection</ulink>,
+      et <ulink url="http://php.net/manual/en/spl.installation.php">spl</ulink>.
+      Ces extensions standard sont activées par défaut et ne peuvent être désactivées
+      sans patcher le système de construction de PHP ou/et les sources en C.
     </para>
 
     <para>
@@ -32,8 +34,10 @@
       <ulink url="http://xdebug.org/">Xdebug</ulink> (2.5.0 ou ultérieur) et
       <ulink url="http://php.net/manual/en/tokenizer.installation.php">tokenizer</ulink>.
 
+
       La génération des rapports XML nécessite l'extension
       <ulink url="http://php.net/manual/en/xmlwriter.installation.php">xmlwriter</ulink>.
+
     </para>
   </section>
 
@@ -41,10 +45,9 @@
     <title>PHP Archive (PHAR)</title>
 
     <para>
-      La manière la plus simple d'obtenir PHPUnit est de télécharger une
-      The easiest way to obtain PHPUnit is to download a <ulink
-            url="http://php.net/phar">Archive PHP (PHAR)</ulink> qui continer toutes les dépendances
-      requises (ainsi que certaines optionnelles) de PHPUnit archivées en un seul
+      La manière la plus simple d'obtenir PHPUnit est de télécharger<ulink
+      url="http://php.net/phar">l'Archive PHP (PHAR)</ulink> qui contient toutes les
+      dépendances requises (ainsi que certaines optionnelles) de PHPUnit archivées en un seul
       fichier.
     </para>
 
@@ -54,8 +57,8 @@
     </para>
 
     <para>
-      If the <ulink url="http://suhosin.org/">Suhosin</ulink> extension is
-      enabled, you need to allow execution of PHARs in your
+      Si l'extension <ulink url="http://suhosin.org/">Suhosin</ulink> est
+      activé, vous devez autoriser l'exécution des PHAR dans votre
       <literal>php.ini</literal>:
 
       <screen>
@@ -64,7 +67,7 @@ suhosin.executor.include.whitelist = phar
     </para>
 
     <para>
-      To globally install the PHAR:
+      Pour installer le PHAR de manière globale :
     </para>
 
     <screen>
@@ -76,7 +79,7 @@ suhosin.executor.include.whitelist = phar
     </screen>
 
     <para>
-      You may also use the downloaded PHAR file directly:
+      Vous pouvez également utiliser directement le fichier PHAR téléchargé:
     </para>
 
     <screen>
@@ -89,105 +92,105 @@ suhosin.executor.include.whitelist = phar
       <title>Windows</title>
 
       <para>
-        Globally installing the PHAR involves the same procedure as manually
+        L'installation globale du PHAR implique la même procédure que l'installation
         <ulink url="https://getcomposer.org/doc/00-intro.md#installation-windows">
-          installing Composer on Windows</ulink>:
+        manuelle de Composer sous Windows</ulink>:
       </para>
 
       <orderedlist>
         <listitem>
           <para>
-            Create a directory for PHP binaries; e.g., <filename>C:\bin</filename>
+            Créer un répertoire pour les binaires PHP; ex. : <filename>C:\bin</filename>
           </para>
         </listitem>
         <listitem>
           <para>
-            Append <userinput>;C:\bin</userinput> to your <varname>PATH</varname>
-            environment variable
+            Ajouter <userinput>;C:\bin</userinput> à votre variable d'environnement
+            <varname>PATH</varname>
             (<ulink url="http://stackoverflow.com/questions/6318156/adding-python-path-on-windows-7">related help</ulink>)
           </para>
         </listitem>
         <listitem>
           <para>
-            Download <ulink url="https://phar.phpunit.de/phpunit-6.1.phar"/> and
-            save the file as <filename>C:\bin\phpunit.phar</filename>
+            Télécharger <ulink url="https://phar.phpunit.de/phpunit-6.1.phar"/> et
+            sauvegarder le fichier sous <filename>C:\bin\phpunit.phar</filename>
           </para>
         </listitem>
         <listitem>
           <para>
-            Open a command line (e.g.,
-            press <keycombo><keycap>Windows</keycap><keycap>R</keycap></keycombo>
-            » type <userinput>cmd</userinput>
+            Ouvrir une ligne de commande (par exemple,
+            appuyez <keycombo><keycap>Windows</keycap><keycap>R</keycap></keycombo>
+            » et tapez <userinput>cmd</userinput>
             » <keycap>ENTER</keycap>)
           </para>
         </listitem>
         <listitem>
           <para>
-            Create a wrapping batch script (results in
+            Créer un script batch (dans
             <filename>C:\bin\phpunit.cmd</filename>):
           </para>
           <screen>
-            <prompt>C:\Users\username&gt;</prompt> <userinput>cd C:\bin</userinput>
-            <prompt>C:\bin&gt;</prompt> <userinput>echo @php "%~dp0phpunit.phar" %* &gt; phpunit.cmd</userinput>
-            <prompt>C:\bin&gt;</prompt> <userinput>exit</userinput>
-          </screen>
+<prompt>C:\Users\username&gt;</prompt> <userinput>cd C:\bin</userinput>
+<prompt>C:\bin&gt;</prompt> <userinput>echo @php "%~dp0phpunit.phar" %* &gt; phpunit.cmd</userinput>
+<prompt>C:\bin&gt;</prompt> <userinput>exit</userinput>
+</screen>
         </listitem>
         <listitem>
           <para>
-            Open a new command line and confirm that you can execute PHPUnit
-            from any path:
+            Ouvrez une nouvelle ligne de commande et confirmez que vous pouvez exécuter PHPUnit à partir de n'importe
+            quel chemin:
           </para>
           <screen>
-            <prompt>C:\Users\username&gt;</prompt> <userinput>phpunit --version</userinput>
-            <computeroutput>PHPUnit x.y.z by Sebastian Bergmann and contributors.</computeroutput>
-          </screen>
+<prompt>C:\Users\username&gt;</prompt> <userinput>phpunit --version</userinput>
+<computeroutput>PHPUnit x.y.z by Sebastian Bergmann and contributors.</computeroutput>
+</screen>
         </listitem>
       </orderedlist>
 
       <para>
-        For Cygwin and/or MingW32 (e.g., TortoiseGit) shell environments, you
-        may skip step 5. above, simply save the file as
-        <filename>phpunit</filename> (without <filename>.phar</filename>
-        extension), and make it executable via
+        Pour les environments shell Cygwin et/ou MingW32 (ex: TortoiseGit), vous
+        passer l'étape 5. ci-dessus, il suffit de sauvegarder le fichier
+        <filename>phpunit</filename> (sans l'extension <filename>.phar</filename>),
+        et de le rendre executable via
         <userinput>chmod 775 phpunit</userinput>.
       </para>
 
     </section>
 
     <section id="installation.phar.verification">
-      <title>Verifying PHPUnit PHAR Releases</title>
+      <title>Vérification des versions PHAR de PHPUnit</title>
 
       <para>
-        All official releases of code distributed by the PHPUnit Project are
-        signed by the release manager for the release. PGP signatures and SHA1
-        hashes are available for verification on <ulink
-              url="https://phar.phpunit.de/">phar.phpunit.de</ulink>.
+        Toutes les versions officielles de code distribuées par le projet PHPUnit sont
+        signées par le responsable de publication de la version. Les signatures PGP et les hachages
+        SHA1 sont disponibles pour vérification sur <ulink
+        url="https://phar.phpunit.de/">phar.phpunit.de</ulink>.
       </para>
 
       <para>
-        The following example details how release verification works. We start
-        by downloading <filename>phpunit.phar</filename> as well as its
-        detached PGP signature <filename>phpunit.phar.asc</filename>:
+        L'exemple suivant détaille le fonctionnement de la vérification de version. Nous commençons
+        par tlécharger <filename>phpunit.phar</filename> ainsi que sa
+        signature PGP détachée <filename>phpunit.phar.asc</filename>:
       </para>
 
       <screen><userinput>wget https://phar.phpunit.de/phpunit.phar</userinput>
-        <userinput>wget https://phar.phpunit.de/phpunit.phar.asc</userinput></screen>
+<userinput>wget https://phar.phpunit.de/phpunit.phar.asc</userinput></screen>
 
       <para>
-        We want to verify PHPUnit's PHP Archive (<filename>phpunit.phar</filename>)
-        against its detached signature (<filename>phpunit.phar.asc</filename>):
+        Nous voulons vérifier l'archive PHP Phar de PHPUnit (<filename>phpunit.phar</filename>)
+        par rapport à sa signature détachée (<filename>phpunit.phar.asc</filename>):
       </para>
 
       <screen><userinput>gpg phpunit.phar.asc</userinput>
-        gpg: Signature made Sat 19 Jul 2014 01:28:02 PM CEST using RSA key ID 6372C20A
-        gpg: Can't check signature: public key not found</screen>
+gpg: Signature made Sat 19 Jul 2014 01:28:02 PM CEST using RSA key ID 6372C20A
+gpg: Can't check signature: public key not found</screen>
 
       <para>
-        We don't have the release manager's public key (<literal>6372C20A</literal>)
-        in our local system. In order to proceed with the verification we need
-        to retrieve the release manager's public key from a key server. One such
-        server is <filename>pgp.uni-mainz.de</filename>. The public key servers
-        are linked together, so you should be able to connect to any key server.
+        Nous n'avons pas la clé publique du responsable de la publication (<literal>6372C20A</literal>)
+        dans notre système local. Afin de procéder à la vérification, nous devons récupérer la clé
+        publique du gestionnaire de versions à partir d'un serveur de clés. Un de
+        ces serveurs est <filename>pgp.uni-mainz.de</filename>. Les serveurs de clés publiques
+        sont liés entre eux, vous devriez donc pouvoir vous connecter à n'importe quel serveur de clés.
       </para>
 
       <screen><userinput>gpg --keyserver pgp.uni-mainz.de --recv-keys 0x4AA394086372C20A</userinput><![CDATA[
@@ -197,10 +200,10 @@ gpg: Total number processed: 1
 gpg:               imported: 1  (RSA: 1)]]></screen>
 
       <para>
-        Now we have received a public key for an entity known as "Sebastian
-        Bergmann &lt;sb@sebastian-bergmann.de&gt;". However, we have no way of
-        verifying this key was created by the person known as Sebastian
-        Bergmann. But, let's try to verify the release signature again.
+        Nous avons maintenant reçu une clé publique pour une entité appelée "Sebastian
+        Bergmann &lt;sb@sebastian-bergmann.de&gt;". Cependant, nous n'avons aucun moyen
+        de vérifier que cette clé a été créée par la personne connue sous le nom de Sebastian
+        Bergmann. Mais, essayons de vérifier à nouveau la signature de la version délivrée.
       </para>
 
       <screen><userinput>gpg phpunit.phar.asc</userinput><![CDATA[
@@ -216,27 +219,27 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: D840 6D0D 8294 7747 2937  7831 4AA3 9408 6372 C20A]]></screen>
 
       <para>
-        At this point, the signature is good, but we don't trust this key. A
-        good signature means that the file has not been tampered. However, due
-        to the nature of public key cryptography, you need to additionally
-        verify that key <literal>6372C20A</literal> was created by the real
+        À ce stade, la signature est bonne, mais nous ne faisons pas confiance à cette clé. Une
+        bonne signature signifie que le fichier n'a pas été falsifié. Cependant, en raison
+        de la nature de la cryptographie à clé publique, vous devez également
+        vérifier que la clé <literal>6372C20A</literal> a été créée par le vrai
         Sebastian Bergmann.
       </para>
 
       <para>
-        Any attacker can create a public key and upload it to the public key
-        servers. They can then create a malicious release signed by this fake
-        key. Then, if you tried to verify the signature of this corrupt release,
-        it would succeed because the key was not the "real" key. Therefore, you
-        need to validate the authenticity of this key. Validating the
-        authenticity of a public key, however, is outside the scope of this
+        Tout attaquant peut créer une clé publique et l'uploader sur les serveurs de clés
+        publiques. Ils peuvent ensuite créer une version malveillante signée par cette fausse
+        clé. Ensuite, si vous essayiez de vérifier la signature de cette version corrompue,
+        cela réussirait car la clé n'était pas la "vraie" clé. Par conséquent, vous
+        devez valider l'authenticité de cette clé. La validation de
+        l'authenticité d'une clé publique est toutefois hors de la portée de cette
         documentation.
       </para>
 
       <para>
-        It may be prudent to create a shell script to manage PHPUnit installation
-        that verifies the GnuPG signature before running your test suite. For
-        example:
+        Il peut être prudent de créer un script shell pour gérer l'installation de PHPUnit
+        qui vérifie la signature de GnuPG avant d'exécuter votre suite de tests. Par
+        exemple:
       </para>
 
       <screen><![CDATA[
@@ -298,185 +301,66 @@ fi
     </section>
   </section>
 
-  <screen><userinput>pear config-set auto_discover 1</userinput>
-<userinput>pear install pear.phpunit.de/PHPUnit</userinput></screen>
+  <section id="installation.composer">
+    <title>Composer</title>
 
-  <para>
-    Les paquets facultatifs suivants sont disponibles :
-  </para>
+    <para>
+      Ajoutez simplement une dépendance (au développement) à
+      <literal>phpunit/phpunit</literal> au fichier
+      <literal>composer.json</literal> de votre projet si vous utilisez <ulink
+      url="https://getcomposer.org/">Composer</ulink> pour gérer les
+      dépendances de votre projet :
+    </para>
 
-  <variablelist>
-    <varlistentry>
-      <term><literal>DbUnit</literal></term>
-      <listitem>
-        <para>
-          Portage de DbUnit pour PHP/PHPUnit destiné à gérer les tests interagissant avec des bases de données.
-        </para>
+    <screen><userinput>composer require --dev phpunit/phpunit ^6.1</userinput></screen>
+  </section>
 
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
+  <section id="installation.optional-packages">
+    <title>Paquets optionnels</title>
 
-        <screen><userinput>pear install phpunit/DbUnit</userinput></screen>
-      </listitem>
-    </varlistentry>
+    <para>
+      Les packages optionnels suivants sont disponibles:
+    </para>
 
-    <varlistentry>
-      <term><literal>PHPUnit_Selenium</literal></term>
-      <listitem>
-        <para>
-          Intégration de Selenium RC pour PHPUnit.
-        </para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <literal>PHP_Invoker</literal>
+        </term>
 
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
+        <listitem>
+          <para>
+            Une classe d'utilitaire pour invoquer des appelables avec un délai d'expiration. Ce package est
+            requis pour appliquer les délais d'attente de test en mode strict.
+          </para>
 
-        <screen><userinput>pear install phpunit/PHPUnit_Selenium</userinput></screen>
-      </listitem>
-    </varlistentry>
+          <para>
+            Ce package est inclus dans la distribution PHAR de PHPUnit. Il peut
+            être installée via Composer en utilisant la commande suivate:
+          </para>
 
-    <varlistentry>
-      <term><literal>PHPUnit_Story</literal></term>
-      <listitem>
-        <para>
-          Lanceur de tests basés sur des histoires pour les développements dirigés par le comportement (Behavior-Driven Development) avec PHPUnit.
-        </para>
+          <screen><userinput>composer require --dev phpunit/php-invoker</userinput></screen>
+        </listitem>
+      </varlistentry>
 
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
+      <varlistentry>
+        <term>
+          <literal>DbUnit</literal>
+        </term>
 
-        <screen><userinput>pear install phpunit/PHPUnit_Story</userinput></screen>
-      </listitem>
-    </varlistentry>
+        <listitem>
+          <para>
+            Portage DbUnit pour PHP/PHPUnit pour prendre en charge le test d'interaction de base de données.
+          </para>
 
-    <varlistentry>
-      <term><literal>PHPUnit_SkeletonGenerator</literal></term>
-      <listitem>
-        <para>
-          Outil qui permet de générer des squelettes de classes de test à partir des classes du code
-          de production et vice versa.
-        </para>
+          <para>
+            Ce package n'est pas inclus dans la distribution PHAR de PHPUnit. Il peut
+            être installée via Composer en utilisant la commande suivante:
+          </para>
 
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_SkeletonGenerator</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHPUnit_TestListener_DBUS</literal></term>
-      <listitem>
-        <para>
-          Un moniteur de tests qui envoie des événements à DBUS.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_TestListener_DBUS</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHPUnit_TestListener_XHProf</literal></term>
-      <listitem>
-        <para>
-          Un moniteur de tests qui utilise XHProf pour profiler automatiquement le code testé.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_TestListener_XHProf</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHPUnit_TicketListener_Fogbugz</literal></term>
-      <listitem>
-        <para>
-          Un moniteur de tickets qui interagit avec l'API d'incidents de FogBugz.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_TicketListener_Fogbugz</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHPUnit_TicketListener_GitHub</literal></term>
-      <listitem>
-        <para>
-          Un moniteur de tickets qui interagit avec l'API d'incidents de GitHub.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_TicketListener_GitHub</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHPUnit_TicketListener_GoogleCode</literal></term>
-      <listitem>
-        <para>
-          Un moniteur de tickets qui interagit avec l'API d'incidents de Google Code.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_TicketListener_GoogleCode</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHPUnit_TicketListener_Trac</literal></term>
-      <listitem>
-        <para>
-          Un moniteur de tickets qui interagit avec l'API d'incidents de Trac.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHPUnit_TicketListener_Trac</userinput></screen>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><literal>PHP_Invoker</literal></term>
-      <listitem>
-        <para>
-          Une classe utilitaire pour invoquer des appels avec un délai d'expiration. Ce paquet est
-          nécessaire pour mettre en oeuvre des dépassements de délais pour les tests en mode strict.
-        </para>
-
-        <para>
-          Ce paquet peut être installé en utilisant la commande suivante :
-        </para>
-
-        <screen><userinput>pear install phpunit/PHP_Invoker</userinput></screen>
-      </listitem>
-    </varlistentry>
-  </variablelist>
-
-  <para>
-    Après l'installation, vous trouverez les fichiers du code source de PHPUnit dans votre
-    répertoire local PEAR; le chemin d'accès est habituellement
-    <filename>/usr/lib/php/PHPUnit</filename>.
-  </para>
+          <screen><userinput>composer require --dev phpunit/dbunit</userinput></screen>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
 </chapter>
