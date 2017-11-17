@@ -35,7 +35,7 @@ Attention, la documentation est en cours de traduction (cf. tableau ci dessous)
 | code-coverage-analysis.xml        | OK        | @brice @gbprod    | done                     |
 | configuration.xml                 | OK        | @gbprod           | done                     |
 | copyright.xml                     | OK        | @gbprod           | done                     |
-| database.xml                      | NOK       |                   |                          |
+| database.xml                      | OK        | @gbprod           | done                     |
 | extending-phpunit.xml             | OK        | @gbprod           | done                     |
 | fixtures.xml                      | OK        | @gbprod           | done                     |
 | incomplete-and-skipped-tests.xml  | OK        | @gbprod           | done                     |
