@@ -837,7 +837,7 @@ public function initialBalanceShouldBe0()
 
     <para>
       <indexterm><primary>TestDox</primary></indexterm>
-      <indexte218rm><primary>@testdox</primary></indexterm>
+      <indexterm><primary>@testdox</primary></indexterm>
     </para>
 
     <programlisting></programlisting>
