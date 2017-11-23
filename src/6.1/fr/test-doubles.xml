@@ -789,7 +789,7 @@ class FooTest extends TestCase
     </example>
 
     <para>
-      <xref linkend="writing-tests-for-phpunit.assertions.assertThat.tables.constraints"/>
+      <xref linkend="appendixes.assertions.assertThat.tables.constraints"/>
       montre les contraintes qui peuvent être appliquées aux paramètres de méthode et
       <xref linkend="test-doubles.mock-objects.tables.matchers"/>
       montre les matchers qui sont disponibles pour indiquer le nombre

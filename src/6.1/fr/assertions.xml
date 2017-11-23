@@ -1779,7 +1779,7 @@ Tests: 1, Assertions: 1, Failures: 1.]]></screen>
     <indexterm><primary>assertStringMatchesFormat()</primary></indexterm>
     <indexterm><primary>assertStringNotMatchesFormat()</primary></indexterm>
     <para><literal>assertStringMatchesFormat(string $format, string $string[, string $message = ''])</literal></para>
-    <para>Signale une erreur identifiée par <literal>$message</literal> si  <iteral>$string</literal> ne correspond pas à la chaine <literal>$format</literal>.</para>
+    <para>Signale une erreur identifiée par <literal>$message</literal> si  <literal>$string</literal> ne correspond pas à la chaine <literal>$format</literal>.</para>
     <para><literal>assertStringNotMatchesFormat()</literal> est l'inverse de cette assertion et prend les mêmes arguments.</para>
     <example id="appendixes.assertions.assertStringMatchesFormat.example">
       <title>Utilisation de assertStringMatchesFormat()</title>
